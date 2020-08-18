@@ -122,80 +122,84 @@ class f_FlowState extends State<f_Flow>
           },
         ),
       ),
-      body: Container(
-        alignment: Alignment.center,
-        child: Column(
-          children: <Widget>[
-            Container(
-              width: 500,
-              height: 300,
-              child: Center(
-                child: Flow(
-                  delegate: FlowMenuDelegate(animation: _animationController),
-                  children: menuItems
-                      .map<Widget>((IconData icon) => flowMenuItem(icon))
-                      .toList(),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 100,
-            ),
-            Container(
-              width: 500,
-              height: 205,
-              child: Center(
-                child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      //点击后让动画可前行或回退
-                      _animationController1.status == AnimationStatus.completed
-                          ? _animationController1.reverse()
-                          : _animationController1.forward();
-                    });
-                  },
-                  child: Container(
-                    color: Colors.blueAccent.withOpacity(0.4),
-                    width: 200,
-                    height: 200,
+      body: ListView(
+        children: [
+          Container(
+            alignment: Alignment.center,
+            child: Column(
+              children: <Widget>[
+                Container(
+                  width: 500,
+                  height: 300,
+                  child: Center(
                     child: Flow(
-                      delegate: FlowAnimatedCircle(_animationController1.value),
-                      children: _build1(),
+                      delegate: FlowMenuDelegate(animation: _animationController),
+                      children: menuItems
+                          .map<Widget>((IconData icon) => flowMenuItem(icon))
+                          .toList(),
                     ),
                   ),
                 ),
-              ),
-            ),
-            Container(
-              width: 500,
-              height: 300,
-              child: Stack(
-                children: <Widget>[
-                  Positioned.fill(
-                    child: Flow(
-                      delegate: FlowAnimatedCircle(_animationController2.value),
-                      children: _build2(),
-                    ),
-                  ),
-                  Positioned.fill(
-                    child: IconButton(
-                      icon: Icon(Icons.menu),
-                      onPressed: () {
+                SizedBox(
+                  height: 100,
+                ),
+                Container(
+                  width: 500,
+                  height: 205,
+                  child: Center(
+                    child: GestureDetector(
+                      onTap: () {
                         setState(() {
                           //点击后让动画可前行或回退
-                          _animationController2.status ==
-                                  AnimationStatus.completed
-                              ? _animationController2.reverse()
-                              : _animationController2.forward();
+                          _animationController1.status == AnimationStatus.completed
+                              ? _animationController1.reverse()
+                              : _animationController1.forward();
                         });
                       },
+                      child: Container(
+                        color: Colors.blueAccent.withOpacity(0.4),
+                        width: 200,
+                        height: 200,
+                        child: Flow(
+                          delegate: FlowAnimatedCircle(_animationController1.value),
+                          children: _build1(),
+                        ),
+                      ),
                     ),
                   ),
-                ],
-              ),
-            )
-          ],
-        ),
+                ),
+                Container(
+                  width: 500,
+                  height: 300,
+                  child: Stack(
+                    children: <Widget>[
+                      Positioned.fill(
+                        child: Flow(
+                          delegate: FlowAnimatedCircle(_animationController2.value),
+                          children: _build2(),
+                        ),
+                      ),
+                      Positioned.fill(
+                        child: IconButton(
+                          icon: Icon(Icons.menu),
+                          onPressed: () {
+                            setState(() {
+                              //点击后让动画可前行或回退
+                              _animationController2.status ==
+                                  AnimationStatus.completed
+                                  ? _animationController2.reverse()
+                                  : _animationController2.forward();
+                            });
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

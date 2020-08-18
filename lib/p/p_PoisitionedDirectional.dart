@@ -14,7 +14,7 @@ class p_PoisitonedDirectionalState extends State<p_PoisitonedDirectional> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text('Aqlign'),
+        title: Text('Align'),
         leading: IconButton(
           icon: Icon(Icons.chevron_left),
           onPressed: () {

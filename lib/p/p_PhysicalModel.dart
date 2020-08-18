@@ -22,54 +22,58 @@ class p_PhysicalModelState extends State<p_PhysicalModel> {
           },
         ),
       ),
-      body: Container(
-        alignment: Alignment.center,
-        child: Column(
-          children: <Widget>[
-            SizedBox(
-              height: 60,
-            ),
-            Container(
-              child: PhysicalModel(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.blue,
-                elevation: 8,
-                child: Container(
-                  height: 100,
-                  width: 100,
+      body: ListView(
+        children: [
+          Container(
+            alignment: Alignment.center,
+            child: Column(
+              children: <Widget>[
+                SizedBox(
+                  height: 60,
                 ),
-              ),
-            ),
-            SizedBox(
-              height: 60,
-            ),
-            Container(
-              child: PhysicalModel(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.blue,
-                elevation: 18,
-                shadowColor: Colors.red,
-                child: Container(
-                  height: 100,
-                  width: 100,
+                Container(
+                  child: PhysicalModel(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.blue,
+                    elevation: 8,
+                    child: Container(
+                      height: 100,
+                      width: 100,
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            SizedBox(
-              height: 60,
-            ),
-            Container(
-              child: PhysicalShape(
-                color: Colors.red,
-                clipper: ShapeBorderClipper(shape: CircleBorder()),
-                child: Container(
-                  height: 150,
-                  width: 150,
+                SizedBox(
+                  height: 60,
                 ),
-              ),
-            )
-          ],
-        ),
+                Container(
+                  child: PhysicalModel(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.blue,
+                    elevation: 18,
+                    shadowColor: Colors.red,
+                    child: Container(
+                      height: 100,
+                      width: 100,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 60,
+                ),
+                Container(
+                  child: PhysicalShape(
+                    color: Colors.red,
+                    clipper: ShapeBorderClipper(shape: CircleBorder()),
+                    child: Container(
+                      height: 150,
+                      width: 150,
+                    ),
+                  ),
+                )
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

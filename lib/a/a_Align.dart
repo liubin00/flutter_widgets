@@ -20,74 +20,78 @@ class a_AlignState extends State<a_Align> {
           },
         ),
       ),
-      body: Container(
-        alignment: Alignment.center,
-        child: Column(
-          children: <Widget>[
-            Container(
-              color: Colors.blue,
-              width: 200,
-              height: 200,
-              child: Align(
-                child: Text(
-                  '测试',
-                  style: TextStyle(fontSize: 19),
+      body:ListView(
+        children: [
+          Container(
+            alignment: Alignment.center,
+            child: Column(
+              children: <Widget>[
+                Container(
+                  color: Colors.blue,
+                  width: 200,
+                  height: 200,
+                  child: Align(
+                    child: Text(
+                      '测试',
+                      style: TextStyle(fontSize: 19),
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            Container(
-              width: 20,
-              height: 20,
-              color: Colors.white,
-            ),
-            Container(
-              color: Colors.blue,
-              width: 200,
-              height: 200,
-              child: Align(
-                alignment: Alignment.bottomRight,
-                child: Text(
-                  '测试',
-                  style: TextStyle(fontSize: 19),
+                Container(
+                  width: 20,
+                  height: 20,
+                  color: Colors.white,
                 ),
-              ),
-            ),
-            Container(
-              width: 20,
-              height: 20,
-              color: Colors.white,
-            ),
-            Container(
-              color: Colors.blue,
-              width: 200,
-              height: 200,
-              child: Align(
-                alignment: Alignment(-0.4, 0.5),
-                child: Text(
-                  '测试',
-                  style: TextStyle(fontSize: 19),
+                Container(
+                  color: Colors.blue,
+                  width: 200,
+                  height: 200,
+                  child: Align(
+                    alignment: Alignment.bottomRight,
+                    child: Text(
+                      '测试',
+                      style: TextStyle(fontSize: 19),
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            Container(
-              width: 20,
-              height: 20,
-              color: Colors.white,
-            ),
-            Container(
-              color: Colors.blue,
-              child: Align(
-                widthFactor: 4,
-                heightFactor: 4,
-                child: Container(
-                  height: 50,
-                  width: 50,
-                  color: Colors.red,
+                Container(
+                  width: 20,
+                  height: 20,
+                  color: Colors.white,
                 ),
-              ),
-            )
-          ],
-        ),
+                Container(
+                  color: Colors.blue,
+                  width: 200,
+                  height: 200,
+                  child: Align(
+                    alignment: Alignment(-0.4, 0.5),
+                    child: Text(
+                      '测试',
+                      style: TextStyle(fontSize: 19),
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 20,
+                  height: 20,
+                  color: Colors.white,
+                ),
+                Container(
+                  color: Colors.blue,
+                  child: Align(
+                    widthFactor: 4,
+                    heightFactor: 4,
+                    child: Container(
+                      height: 50,
+                      width: 50,
+                      color: Colors.red,
+                    ),
+                  ),
+                )
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

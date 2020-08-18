@@ -22,35 +22,39 @@ class b_BannerState extends State<b_Banner> {
           },
         ),
       ),
-      body: Container(
-        alignment: Alignment.center,
-        child: Column(
-          children: <Widget>[
-            Banner(
-              color: Colors.blue,
-              message: 'Banner',
-              location: BannerLocation.topStart,
-              child: Container(
-                width: 200,
-                height: 200,
-                color: Colors.red,
-              ),
+      body:ListView(
+        children: [
+          Container(
+            alignment: Alignment.center,
+            child: Column(
+              children: <Widget>[
+                Banner(
+                  color: Colors.blue,
+                  message: 'Banner',
+                  location: BannerLocation.topStart,
+                  child: Container(
+                    width: 200,
+                    height: 200,
+                    color: Colors.red,
+                  ),
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+                Container(
+                  width: 200,
+                  height: 200,
+                  color: Colors.black,
+                  child: Banner(
+                    color: Colors.blue,
+                    message: 'Banner',
+                    location: BannerLocation.topEnd,
+                  ),
+                ),
+              ],
             ),
-            SizedBox(
-              height: 50,
-            ),
-            Container(
-              width: 200,
-              height: 200,
-              color: Colors.black,
-              child: Banner(
-                color: Colors.blue,
-                message: 'Banner',
-                location: BannerLocation.topEnd,
-              ),
-            ),
-          ],
-        ),
+          )
+        ],
       ),
     );
   }

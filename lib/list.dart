@@ -141,6 +141,18 @@ class button_list extends StatelessWidget {
             width: 350,
             height: 60,
             child: RaisedButton(
+              child: Text('M'),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => m_homepage()));
+              },
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.all(10),
+            width: 350,
+            height: 60,
+            child: RaisedButton(
               child: Text('N'),
               onPressed: () {
                 Navigator.push(context,

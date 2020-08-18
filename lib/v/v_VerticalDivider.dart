@@ -22,32 +22,36 @@ class v_VerticalDividerState extends State<v_VerticalDivider> {
           },
         ),
       ),
-      body: Container(
-        alignment: Alignment.center,
-        child: Column(
-          children: <Widget>[
-            Container(
-              height: 300,
-              child: Divider(
-                height: 10,
-                thickness: 5,
-                color: Colors.red,
-                indent: 10,
-                endIndent: 20,
-              ),
+      body: ListView(
+        children: [
+          Container(
+            alignment: Alignment.center,
+            child: Column(
+              children: <Widget>[
+                Container(
+                  height: 300,
+                  child: Divider(
+                    height: 10,
+                    thickness: 5,
+                    color: Colors.red,
+                    indent: 10,
+                    endIndent: 20,
+                  ),
+                ),
+                Container(
+                  height: 300,
+                  child: VerticalDivider(
+                    width: 20,
+                    thickness: 2,
+                    color: Colors.red,
+                    indent: 10,
+                    endIndent: 10,
+                  ),
+                )
+              ],
             ),
-            Container(
-              height: 300,
-              child: VerticalDivider(
-                width: 20,
-                thickness: 2,
-                color: Colors.red,
-                indent: 10,
-                endIndent: 10,
-              ),
-            )
-          ],
-        ),
+          )
+        ],
       ),
     );
   }

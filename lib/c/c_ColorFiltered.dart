@@ -22,60 +22,64 @@ class c_ColorFilteredState extends State<c_ColorFiltered> {
           },
         ),
       ),
-      body: Container(
-        alignment: Alignment.center,
-        child: Column(
-          children: <Widget>[
-            Container(
-              width: 200,
-              height: 200,
-              color: Colors.grey,
-              child: Image.asset('img/1.jpg'),
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            Container(
-              width: 200,
-              height: 200,
-              child: ColorFiltered(
-                colorFilter: ColorFilter.mode(Colors.blue, BlendMode.modulate),
-                child: Image.asset('img/1.jpg'),
-              ),
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            Container(
-              width: 400,
-              child: Row(
-                children: <Widget>[
-                  Expanded(
+      body: ListView(
+        children: [
+          Container(
+            alignment: Alignment.center,
+            child: Column(
+              children: <Widget>[
+                Container(
+                  width: 200,
+                  height: 200,
+                  color: Colors.grey,
+                  child: Image.asset('img/1.jpg'),
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                Container(
+                  width: 200,
+                  height: 200,
+                  child: ColorFiltered(
+                    colorFilter: ColorFilter.mode(Colors.blue, BlendMode.modulate),
                     child: Image.asset('img/1.jpg'),
                   ),
-                  Expanded(
-                    child: ColorFiltered(
-                      colorFilter: ColorFilter.mode(
-                          Colors.pink[200], BlendMode.modulate),
-                      child: Image.asset('img/1.jpg'),
-                    ),
-                  )
-                ],
-              ),
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                Container(
+                  width: 400,
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Image.asset('img/1.jpg'),
+                      ),
+                      Expanded(
+                        child: ColorFiltered(
+                          colorFilter: ColorFilter.mode(
+                              Colors.pink[200], BlendMode.modulate),
+                          child: Image.asset('img/1.jpg'),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                ColorFiltered(
+                  colorFilter: ColorFilter.mode(Colors.grey, BlendMode.saturation),
+                  child: Container(
+                    height: 100,
+                    width: 200,
+                    color: Colors.blue,
+                  ),
+                )
+              ],
             ),
-            SizedBox(
-              height: 40,
-            ),
-            ColorFiltered(
-              colorFilter: ColorFilter.mode(Colors.grey, BlendMode.saturation),
-              child: Container(
-                height: 100,
-                width: 200,
-                color: Colors.blue,
-              ),
-            )
-          ],
-        ),
+          )
+        ],
       ),
     );
   }

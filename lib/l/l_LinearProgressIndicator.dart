@@ -22,60 +22,64 @@ class l_LinearProgressIndicatorState extends State<l_LinearProgressIndicator> {
           },
         ),
       ),
-      body: Container(
-        alignment: Alignment.center,
-        child: Column(
-          children: <Widget>[
-            SizedBox(
-              height: 40,
+      body: ListView(
+        children: [
+          Container(
+            alignment: Alignment.center,
+            child: Column(
+              children: <Widget>[
+                SizedBox(
+                  height: 40,
+                ),
+                LinearProgressIndicator(),
+                SizedBox(
+                  height: 40,
+                ),
+                LinearProgressIndicator(
+                  value: 0.2,
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                LinearProgressIndicator(
+                  value: 0.2,
+                  backgroundColor: Colors.blue,
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.pink),
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                CircularProgressIndicator(),
+                SizedBox(
+                  height: 40,
+                ),
+                CircularProgressIndicator(
+                  value: 0.3,
+                  backgroundColor: Colors.blue,
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.pink),
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                CupertinoActivityIndicator(
+                  radius: 20,
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                RefreshProgressIndicator(),
+                SizedBox(
+                  height: 40,
+                ),
+                RefreshProgressIndicator(
+                  backgroundColor: Colors.blue,
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
+                  strokeWidth: 5.0,
+                )
+              ],
             ),
-            LinearProgressIndicator(),
-            SizedBox(
-              height: 40,
-            ),
-            LinearProgressIndicator(
-              value: 0.2,
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            LinearProgressIndicator(
-              value: 0.2,
-              backgroundColor: Colors.blue,
-              valueColor: AlwaysStoppedAnimation<Color>(Colors.pink),
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            CircularProgressIndicator(),
-            SizedBox(
-              height: 40,
-            ),
-            CircularProgressIndicator(
-              value: 0.3,
-              backgroundColor: Colors.blue,
-              valueColor: AlwaysStoppedAnimation<Color>(Colors.pink),
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            CupertinoActivityIndicator(
-              radius: 20,
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            RefreshProgressIndicator(),
-            SizedBox(
-              height: 40,
-            ),
-            RefreshProgressIndicator(
-              backgroundColor: Colors.blue,
-              valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
-              strokeWidth: 5.0,
-            )
-          ],
-        ),
+          )
+        ],
       ),
     );
   }

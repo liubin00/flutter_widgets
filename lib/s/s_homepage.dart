@@ -61,7 +61,7 @@ class s_homepage extends StatelessWidget {
                   width: 350,
                   height: 60,
                   child: RaisedButton(
-                    child: Text('GestureDetector'),
+                    child: Text('SafeArea'),
                     onPressed: () {
                       Navigator.push(
                           context,

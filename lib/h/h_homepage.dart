@@ -28,7 +28,7 @@ class h_homepage extends StatelessWidget {
                   width: 350,
                   height: 60,
                   child: RaisedButton(
-                    child: Text('GestureDetector'),
+                    child: Text('Hero'),
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => h_Hero()));

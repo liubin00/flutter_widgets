@@ -36,52 +36,56 @@ class a_AnimatedSwitcherState extends State<a_AnimatedSwitcher> {
           },
         ),
       ),
-      body: Container(
-        alignment: Alignment.center,
-        child: Column(
-          children: <Widget>[
-            AnimatedSwitcher(
-              duration: Duration(seconds: 2),
-              child: _currChild,
+      body: ListView(
+        children: [
+          Container(
+            alignment: Alignment.center,
+            child: Column(
+              children: <Widget>[
+                AnimatedSwitcher(
+                  duration: Duration(seconds: 2),
+                  child: _currChild,
+                ),
+                RaisedButton(
+                  child: Text('变换1'),
+                  onPressed: () {
+                    setState(() {
+                      _currChild = Container(
+                        key: ValueKey('2'),
+                        height: 100,
+                        width: 100,
+                        color: Colors.blue,
+                      );
+                    });
+                  },
+                ),
+                AnimatedSwitcher(
+                  duration: Duration(seconds: 1),
+                  child: _currChild2,
+                  transitionBuilder: (Widget child, Animation<double> value) {
+                    return ScaleTransition(
+                      child: child,
+                      scale: value,
+                    );
+                  },
+                ),
+                RaisedButton(
+                  child: Text('变换2'),
+                  onPressed: () {
+                    setState(() {
+                      _currChild2 = Container(
+                        key: ValueKey('4'),
+                        height: 100,
+                        width: 100,
+                        color: Colors.blue,
+                      );
+                    });
+                  },
+                )
+              ],
             ),
-            RaisedButton(
-              child: Text('变换1'),
-              onPressed: () {
-                setState(() {
-                  _currChild = Container(
-                    key: ValueKey('2'),
-                    height: 100,
-                    width: 100,
-                    color: Colors.blue,
-                  );
-                });
-              },
-            ),
-            AnimatedSwitcher(
-              duration: Duration(seconds: 1),
-              child: _currChild2,
-              transitionBuilder: (Widget child, Animation<double> value) {
-                return ScaleTransition(
-                  child: child,
-                  scale: value,
-                );
-              },
-            ),
-            RaisedButton(
-              child: Text('变换2'),
-              onPressed: () {
-                setState(() {
-                  _currChild2 = Container(
-                    key: ValueKey('4'),
-                    height: 100,
-                    width: 100,
-                    color: Colors.blue,
-                  );
-                });
-              },
-            )
-          ],
-        ),
+          )
+        ],
       ),
     );
   }
